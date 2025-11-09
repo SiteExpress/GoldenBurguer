@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golden Burger</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffb300, #ff6f00);
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      font-size: 1.3em;
+      margin-top: 12px;
+      color: #fff8e1;
+    }
+
+    .intro {
+      margin-top: 50px;
+      font-size: 1.1em;
+      color: #fff8e1;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 40px;
+      background: #fff;
+      color: #ff6f00;
+      padding: 14px 35px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #ffe082;
+      transform: scale(1.05);
+    }
+
+    .menu {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .item {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .item:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .item h2 {
+      font-size: 1.3em;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .item p {
+      font-size: 0.95em;
+      color: #fff9c4;
+      margin-bottom: 10px;
+    }
+
+    .item span {
+      display: block;
+      font-weight: bold;
+      color: #fff;
+      font-size: 1.1em;
+    }
+
+    footer {
+      margin-top: 60px;
+      color: #fff8e1;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🍔 Golden Burger</h1>
+    <p>O sabor que brilha mais que ouro!</p>
+  </header>
+
+  <div class="intro">
+    <p>O hambúrguer mais desejado de todo o país! Sabor inigualável, preço justo e custo-benefício que você só encontra aqui.</p>
+  </div>
+
+  <button class="btn" id="verCardapio">Ver Cardápio</button>
+
+  <section class="menu" id="menu">
+    <div class="item">
+      <h2>Golden Classic</h2>
+      <p>Pão brioche, carne artesanal, queijo cheddar e molho especial.</p>
+      <span>R$ 24,90</span>
+    </div>
+    <div class="item">
+      <h2>Smash Duplo</h2>
+      <p>Dois burgers 100g, cheddar duplo e cebola caramelizada.</p>
+      <span>R$ 29,90</span>
+    </div>
+    <div class="item">
+      <h2>Cheese Bacon</h2>
+      <p>Carne artesanal, cheddar e crocante de bacon premium.</p>
+      <span>R$ 27,90</span>
+    </div>
+    <div class="item">
+      <h2>Veggie Burger</h2>
+      <p>Hambúrguer vegetal, alface, tomate e maionese artesanal.</p>
+      <span>R$ 25,90</span>
+    </div>
+  </section>
+
+  <a href="https://wa.me/55xxxxxxxxx" target="_blank" class="btn" style="margin-top: 40px;">Pedir pelo WhatsApp</a>
+
+  <footer>
+    © 2025 Golden Burger — Desenvolvido por Site Express!
+  </footer>
+
+  <script>
+    const botao = document.getElementById('verCardapio');
+    const menu = document.getElementById('menu');
+
+    botao.addEventListener('click', () => {
+      menu.style.display = (menu.style.display === 'grid') ? 'none' : 'grid';
+      botao.textContent = (menu.style.display === 'grid') ? 'Fechar Cardápio' : 'Ver Cardápio';
+    });
+  </script>
+
+</body>
+</html>
